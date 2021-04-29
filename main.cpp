@@ -1,3 +1,26 @@
+/*
+ El siguiente programa tiene como principal obejetivo codificar y decodificar
+ informacion obtenida por archivos de entrada.
+
+ En primera instancia se muestra por consola un menu principal el cual le permite al
+ usuario ingresar una opcion entre las siguentes:
+ 1.) Codificar
+ 2.) Decodificar
+ 3.) Salir.
+
+ Se modela y gestiona por medio de un switch - case la opcion ingresada
+ 1.) Codificar: Se procederia a pedir tambien por consola una semila de codificacion
+                metodo de codificacion, nombre de archivo de entrada y de salida, que tendran
+                como ubicacion predeterminada ../lab_3_pt_1/db
+ 2.) Decodificar:Se procederia a pedir tambien por consola una semila de decodificacion
+                metodo de decodificacion, nombre de archivo de entrada y de salida, que tendran
+                como ubicacion predeterminada ../lab_3_pt_1/db
+ 3.) Salir: Se acabara la ejecucion de programa
+
+ 4.) Si el usuario ingresa un numero diferente de 1,2 y 3: Se imprimira en pantalla
+                "Opcion fuera de rango" Y se volvera a mostrar el mismo menu.
+*/
+
 #include <iostream>
 #include "codificar_decodificar.h"
 
@@ -23,6 +46,12 @@ int main(){
             cin >> semilla;
             cout << "Ingrese metodo de codificacion [1-2]: ";
             cin >> metodo_codi;
+            /*
+                CICLO PARA EVALUAR SI LA OPCION DE CODIFICACION
+                Se encuentra dentro de los rangos estipulados, 1 y 2
+                Si el usuario ingresa un numero mayor a 2 y menor a 1
+                Se le pedira nuevamente un metodo de codificado.
+            */
             while(metodo_codi > 2 || metodo_codi < 1){
                 cout << "Opcion fuera de rango." << endl;
                 cout << "Ingrese metodo de codificacion [1-2]: ";
@@ -41,6 +70,12 @@ int main(){
             cin >> semilla;
             cout << "Ingrese metodo de decodificacion [1-2]: ";
             cin >> metodo_deco;
+            /*
+                CICLO PARA EVALUAR SI LA OPCION DE DECODIFICACION
+                Se encuentra dentro de los rangos estipulados, 1 y 2
+                Si el usuario ingresa un numero mayor a 2 y menor a 1
+                Se le pedira nuevamente un metodo de decodificado.
+            */
             while(metodo_deco > 2 || metodo_deco < 1){
                 cout << "Opcion fuera de rango." << endl;
                 cout << "Ingrese metodo de codificacion [1-2]: ";
@@ -55,6 +90,8 @@ int main(){
             dato.decodificar(semilla,metodo_deco,archivo_entrada,archivo_salida);
             break;
         case 3:
+            //Se le lleva a la variabel booleana key el valor de false
+            //Para que se rompa el ciclo while
             key = false;
             cout << "Gracias por utilizar nuestros servicios! :)" << endl;
             break;
