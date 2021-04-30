@@ -505,6 +505,7 @@ void metodo_2_decodificar(string *cadena_semilla, string *cadena_decodificada, i
 void codificar_decodificar::codificar(int semilla, int metodo, string archivo_entrada, string archivo_salida){
     ofstream Guardar;
     ifstream Leer;
+    //Se dedine la ruta relativa en la que va a estar el archivo de entrada
     string file_name = "../lab_3_pt_1/db/" + archivo_entrada + ".txt";
     string *cadena_semilla = NULL, *cadena_codificada = NULL;
     string binario = "";
@@ -556,6 +557,8 @@ void codificar_decodificar::codificar(int semilla, int metodo, string archivo_en
         for(int i = 0; i < tamanio; i++){
             cadena_a_guardar += cadena_codificada[i];
         }
+
+        //Ruta relativa en la que va a estar el archivo de salida
         Guardar.open("../lab_3_pt_1/db/"+archivo_salida+".bin",ios::app);
         Guardar << cadena_a_guardar;
         Guardar.close();
@@ -569,6 +572,8 @@ void codificar_decodificar::codificar(int semilla, int metodo, string archivo_en
 void codificar_decodificar::decodificar(int semilla, int metodo, string archivo_entrada, string archivo_salida){
     ofstream Guardar;
     ifstream Leer;
+
+    //RUTA RELATIVA EN LA QUE VA A ESTAR EL ARCHIVO DE ENTRADA
     string file_name = "../lab_3_pt_1/db/" + archivo_entrada + ".bin";
     string *cadena_semilla = NULL, *cadena_decodificada = NULL;
     int tamanio = 0;
@@ -619,6 +624,8 @@ void codificar_decodificar::decodificar(int semilla, int metodo, string archivo_
         }
         string cadena_a_guardar = convertir_bin_to_str(binario);
         cout << "Decodificado correctamente :)" << endl;
+
+        //RUTA RELATIVA EN LA QUE VA A ESTAR EL ARCHIVO DE SALIDA
         Guardar.open("../lab_3_pt_1/db/"+archivo_salida+".txt",ios::app);
         Guardar << cadena_a_guardar;
         Guardar.close();

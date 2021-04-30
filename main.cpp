@@ -19,6 +19,47 @@
 
  4.) Si el usuario ingresa un numero diferente de 1,2 y 3: Se imprimira en pantalla
                 "Opcion fuera de rango" Y se volvera a mostrar el mismo menu.
+
+    Se incluye la libreria codificar_decodificar.h la cual se encarga de decodificar
+    y decodificar el contendio de los archivos ingresados.
+
+    Para el uso de esta clase, se debe tener en cuenta que la misma cuen ta cuenta don dos
+    funcuines publicas
+
+    1.) void codificar(int,int,string, string): Funcion que se encarga de la codificacion de
+    un archivo .txt para su correcto uso se debe crear un objeto tipo codificar_decodificar e
+    invocar la funcion codificar, la cual cuenta con 4 parametros de entrada:
+        -Un entero que representa la semilla de codificadcion
+        -Un entero que representa el metodo de codificacion
+        -Un string que representa el nombre del archivo de entrada
+        -Un string que representa el nombre del archivo de salida
+    Se debe tener en cuenta la direccion  relativa de los archivos es:
+    ../lab_3_pt_1/db/
+    Lo anterios es bastante importante
+
+    NOTA IMPORTANTE:
+    NO SE GARANTIZA UN CORRECTO FUNCIONAMIENTO SI LOS ARCHIVO NO SE ENCUENTRAN UBICADOS
+    EN DICHA RUTA
+
+    2.) void decodificar(int,int,string,string): Funcion que se enrga de la decodificacion de
+    un archivo .bin, para su correcto uso se debe crear un objeto tipo codificar_decodificar e
+    invocar la funcion decodificar, la cual cuenta con 4 parametros de entrada:
+        -Un entero que representa la semilla de codificadcion
+        -Un entero que representa el metodo de codificacion
+        -Un string que representa el nombre del archivo de entrada
+        -Un string que representa el nombre del archivo de salida
+    Se debe tener en cuenta la direccion  relativa de los archivos es:
+    ../lab_3_pt_1/db/
+    Lo anterios es bastante importante
+
+    NOTA IMPORTANTE:
+    1.) NO SE GARANTIZA UN CORRECTO FUNCIONAMIENTO SI LOS ARCHIVO NO SE ENCUENTRAN UBICADOS
+    EN DICHA RUTA
+
+    2.) Para garantizar un correcto DECODIFICADO se debe tener en cuenta dos cosas, se debe ingresar
+    la misma semilla de decodificacion y el mismo metodo de decodificacion
+    De lo contrario no se asegura un resultado satisfactorio
+
 */
 
 #include <iostream>
@@ -63,6 +104,7 @@ int main(){
             cout << "Ingrese el nombre del archivo de salida: ";
             cin.get();
             getline(cin,archivo_salida);
+            cout << archivo_salida << endl;
             dato.codificar(semilla,metodo_codi,archivo_entrada,archivo_salida);
             break;
         case 2:
