@@ -26,6 +26,14 @@ using namespace std;
     Se debe tener en cuenta la direccion  relativa de los archivos es:
     ../lab_3_pt_1/db/
     Lo anterios es bastante importante
+
+    NOTA IMPORTANTE:
+    1.) NO SE GARANTIZA UN CORRECTO FUNCIONAMIENTO SI LOS ARCHIVO NO SE ENCUENTRAN UBICADOS
+    EN DICHA RUTA
+
+    2.) Para garantizar un correcto DECODIFICADO se debe tener en cuenta dos cosas, se debe ingresar
+    la misma semilla de decodificacion y el mismo metodo de decodificacion
+    De lo contrario no se asegura un resultado satisfactorio
 */
 class codificar_decodificar{
 public:
