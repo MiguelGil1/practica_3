@@ -60,6 +60,9 @@
     la misma semilla de decodificacion y el mismo metodo de decodificacion
     De lo contrario no se asegura un resultado satisfactorio
 
+    3.) No se garantiza una correcta decodificacion ni codificacion si dentro
+    del archivo se encuentran caracteres fuera del ASCCI imprimible
+
 */
 
 #include <iostream>
@@ -99,11 +102,9 @@ int main(){
                 cin >> metodo_codi;
             }
             cout << "Ingrese el nombre del archivo de entrada: ";
-            cin.get();
-            getline(cin,archivo_entrada);
+            cin >> archivo_entrada;
             cout << "Ingrese el nombre del archivo de salida: ";
-            cin.get();
-            getline(cin,archivo_salida);
+            cin >> archivo_salida;
             cout << archivo_salida << endl;
             dato.codificar(semilla,metodo_codi,archivo_entrada,archivo_salida);
             break;
@@ -124,11 +125,9 @@ int main(){
                 cin >> metodo_deco;
             }
             cout << "Ingrese el nombre del archivo de entrada: ";
-            cin.get();
-            getline(cin,archivo_entrada);
+            cin >> archivo_entrada;
             cout << "Ingrese el nombre del archivo de salida: ";
-            cin.get();
-            getline(cin,archivo_salida);
+            cin >> archivo_salida;
             dato.decodificar(semilla,metodo_deco,archivo_entrada,archivo_salida);
             break;
         case 3:
